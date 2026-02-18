@@ -1,0 +1,29 @@
+{
+  "name": "ecom-coupon-engine",
+  "version": "1.0.0",
+  "description": "A scalable promotion engine for eCommerce platforms supporting dynamic and staged discounts, and rule-based eligibility.",
+  "homepage": "https://github.com/siddharth9442/ecom-coupon-engine#readme",
+  "bugs": {
+    "url": "https://github.com/siddharth9442/ecom-coupon-engine/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/siddharth9442/ecom-coupon-engine.git"
+  },
+  "license": "ISC",
+  "author": "siddharth khubikar",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/index.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "mongoose": "^8.23.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}
