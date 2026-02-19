@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { DB_NAME } from '../config.js';
+import { DB_NAME } from '../config/config.js';
 
 const url = `${process.env.MONGODB_URI}/${DB_NAME}`;
 export async function connectDB(){
