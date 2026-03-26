@@ -8,9 +8,9 @@ const userSchema = new Schema({
     avatarUrl: { type: String },
     authProvider: { type: String, enum: [ "google" ] },
     providerId: { type: String },
-    accessToken: { type: String },  // storing temporarily as dont have frontend to store
+    accessToken: { type: String },  // storing temporarily as don't have frontend to store
     refreshToken: { type: String },
-});
+}, { timestamps: true });
 
 userSchema.methods.generateAccessToken = function(){
     return jwt.sign(
