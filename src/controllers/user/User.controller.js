@@ -45,3 +45,29 @@ export async function logout(req, res) {
         throw new ApiError(500, "Failed to logout user");
     }
 }
+
+export async function updateUser(req, res) {
+    try {
+        const { fullName, mobileNo } = req.body;
+
+        let updateData = {};
+        if(fullName) updateData.fullName = fullName;
+        if(mobileNo) updateData.mobileNo = mobileNo;
+
+        await User.findByIdAndUpdate(req.user._id, {
+            $set: updateData
+        }, { new: true });
+
+        return sendResponse(res, {
+            statusCode: 200,
+            message: "User details updated.",
+            data: null
+        });
+    } catch (error) {
+        if (error instanceof ApiError) {
+            throw error;
+        }
+        console.log("Error in UserController.updateUser: ", error);
+        throw new ApiError(500, "Failed to update user details");
+    }
+}
